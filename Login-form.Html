@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-From</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login - Form -->
+    <div class="container">
+		<form action="home.html" id='myForm' class="login active" >  
+            <!-- onsubmit="return ValidateForm()" -->
+			<h2 class="title">Login with your account</h2>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<input type="email" id="email" placeholder="Email address" onkeyup="ValidateEmail()">
+					<i class='bx bx-envelope'></i>
+                    <p id="userError" class="error"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<div class="input-group">
+					<input type="password" pattern=".{8,}" id="password" placeholder="Your password" onkeyup="ValidatePass()">
+					<i class='bx bx-lock-alt' ></i>
+                    <p id="passError" class="error"></p>
+				</div>
+				<span class="help-text">At least 8 characters</span>
+			</div>
+			<button type="submit" class="btn-submit"  value="submit" onclick="return validateForm()">Login</button>
+			<span id = "submit-error"></span>
+			<!-- <a href="#">Forgot password?</a> -->
+			<p>I don't have an account. <a href="#" onclick="switchForm('register', event)" >Register</a></p>
+		</form>
+
+
+        <!-- Register form -->
+        <form action="res.html" id='myForm1'class="register"  >
+            <!-- onsubmit="return ValidateFormReg() -->
+			<h2 class="title">Register your account</h2>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<input type="email" id="emails" placeholder="Email address" onkeyup="ValidateEmail1()">
+					<i class='bx bx-envelope'></i>
+                    <p id="userErrorReg" class="error"></p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="passwords">Password</label>
+				<div class="input-group">
+					<input type="password" pattern=".{6,}" id="passwords" placeholder="Your password" onkeyup="ValidatePass1()">
+					<i class='bx bx-lock-alt' ></i>
+                    <p id="passErrorReg" class="error"></p>
+				</div>
+				<span class="help-text">At least 6 characters</span>
+			</div>
+			<div class="form-group">
+				<label for="conformPass">Confirm password</label>
+				<div class="input-group">
+					<input type="password" pattern=".{6,}" id="conformPass" placeholder="Enter password again" onkeyup="ValidateconfPass()">
+					<i class='bx bx-lock-alt' ></i>
+                    <p id="confErrorReg" class="error"></p>
+                    <p id="message"></p>
+				</div>
+				<span class="help-text">Confirm password must be same with password</span>
+			</div>
+			<button type="submit" class="btn-submit" value="submit" onclick="return validateRegister()">Register</button>
+			<span id = "submit-error1"></span>
+            <!-- onclick="ValidatePassword()"  -->
+			<p>I already have an account. <a href="#" onclick="switchForm('login', event)">Login</a></p>
+		</form>
+	</div>
+
+</body>
+<!-- <script src="Login.js"></script> -->
+<!-- <script src="sigin.js"></script> -->
+<script src="Script.js"></script>
+<!-- <script src="word.js"></script> -->
+</html>
