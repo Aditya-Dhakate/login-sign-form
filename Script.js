@@ -71,7 +71,7 @@ function validateForm(){
     }else{
         alert('login complete')
         submitError.style.display = 'block';
-        // submitError.innerHTML = 'please fill info'
+        submitError.innerHTML = 'please fill info'
         submitError.innerHTML='Login Complete'
 
     }
